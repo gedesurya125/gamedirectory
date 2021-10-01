@@ -6,14 +6,13 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import * as appColor from '../../settings/appColor'
+import * as appColor from "../../settings/appColor";
 import SearchBar from "../searchBar/SearchBar";
+import Logo from "../logo/Logo";
 
 const drawerWidth = 240;
 
-
 function AppLayout(props) {
-
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -21,19 +20,18 @@ function AppLayout(props) {
     setMobileOpen(!mobileOpen);
   };
 
-
   const container =
     window !== undefined ? () => window().document.body : undefined;
-
 
   return (
     <Box sx={{ display: "flex" }}>
       <AppBar
         position="fixed"
         sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
-          background: appColor.primaryYellow
+          // width: { sm: `calc(100% - ${drawerWidth}px)` },
+          zIndex: {xs: 1000, sm: 1300},
+          // ml: { sm: `${drawerWidth}px` },
+          background: appColor.primaryYellow,
         }}
       >
         <Toolbar>
@@ -46,6 +44,12 @@ function AppLayout(props) {
           >
             <MenuIcon />
           </IconButton>
+          <Logo sx={{
+            display: {
+              xs: 'none',
+              sm: 'flex'
+            }
+          }}/>
           <SearchBar />
         </Toolbar>
       </AppBar>
@@ -72,23 +76,23 @@ function AppLayout(props) {
             },
           }}
         >
-          <DrawerContent/>
+          <DrawerContent handleDrawerToggle = {handleDrawerToggle}/>
         </Drawer>
         <Drawer
           variant="permanent"
+          // variant="temporary"
+
           sx={{
             display: { xs: "none", sm: "block" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
               borderRight: `1px solid ${appColor.primaryYellow}`,
-
             },
-
           }}
           open
         >
-          <DrawerContent/>
+          <DrawerContent />
         </Drawer>
       </Box>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
