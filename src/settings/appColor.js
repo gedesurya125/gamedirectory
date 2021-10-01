@@ -1,0 +1,1 @@
+export const primaryYellow = '#e3ca2b'
