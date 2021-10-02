@@ -12,7 +12,7 @@ const Games = styled("div")(({ theme }) => ({
 const commonCardStyles = {
   margin: "7px",
   width: {
-    xs: "46%",
+    xs: "45%",
     sm: "30.2%",
     md: "23%",
     // xl: "25%"

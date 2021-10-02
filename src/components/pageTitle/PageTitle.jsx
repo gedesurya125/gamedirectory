@@ -1,26 +1,28 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import {styled} from '@mui/material/styles'
+import { styled } from "@mui/material/styles";
 import * as appColor from "../../settings/appColor";
 
-const TitleContainer = styled('div')(
-  ({theme})=> ({
-    display: 'flex',
-    alignItems: 'center'
-  })
-)
-const TitleLine = styled('span')(
-  ({theme})=> ({
-    height: '5px',
-    width: '100%',
-    backgroundColor: appColor.primaryYellow,
-    borderRadius: '10px'
-  })
-)
-const PageTitle = ({ children, sx }) => {
+const TitleContainer = styled("div")(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+}));
+const TitleLine = styled("span")(({ theme }) => ({
+  height: "5px",
+  width: "100%",
+  backgroundColor: appColor.primaryYellow,
+  borderRadius: "10px",
+}));
+const PageTitle = ({ children, sx, lineSx, leftLine = true, rightLine = true }) => {
   return (
     <TitleContainer>
-      <TitleLine/>
+      <TitleLine
+        sx={{
+          display: !leftLine && "none",
+          marginRight: Boolean(children) !== false ? '0.5em': '0',
+          ...lineSx
+        }}
+      />
       <Typography
         sx={{
           textAlign: "center",
@@ -28,14 +30,19 @@ const PageTitle = ({ children, sx }) => {
           fontFamily: "Bebas Neue",
           color: appColor.primaryYellow,
           fontSize: "3em",
-          whiteSpace: 'nowrap',
-          padding: '0 0.5em',
+          whiteSpace: "nowrap",
           ...sx,
         }}
       >
         {children}
       </Typography>
-      <TitleLine/>
+      <TitleLine
+        sx={{
+          display: !rightLine && "none",
+          marginLeft: Boolean(children) !== false ? '0.5em': '0',
+          ...lineSx 
+        }}
+      />
     </TitleContainer>
   );
 };

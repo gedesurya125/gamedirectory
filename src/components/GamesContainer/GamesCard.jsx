@@ -4,12 +4,14 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, CardActions, Rating } from "@mui/material";
+import { useHistory } from "react-router-dom";
 
 const GamesCard = ({ game, sx, imgSx }) => {
+  const history = useHistory();
   //results
   return (
     <Card sx={{ ...sx }}>
-      <CardActionArea>
+      <CardActionArea onClick={() => history.push(`/game/detail/${game.id}`)}>
         <CardMedia
           component="img"
           image={game.background_image}
@@ -19,7 +21,7 @@ const GamesCard = ({ game, sx, imgSx }) => {
           }}
         />
         <CardActions disableSpacing>
-          <Rating value={game.rating} readOnly />
+          <Rating precision={0.1} value={game.rating} readOnly />
           {/* {game.rating} */}
         </CardActions>
         <CardContent

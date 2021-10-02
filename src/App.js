@@ -4,6 +4,7 @@ import AppLayout from "./components/appLayout/AppLayout";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AllGamesPage from "./pages/allGames/AllGamesPage";
 import GenresPage from "./pages/byGenres/GenresPage";
+import GameDetail from "./pages/gameDetail/GameDetail";
 function App(props) {
 
 
@@ -15,10 +16,16 @@ function App(props) {
       component: AllGamesPage,
     },
     {
-      exact: false,
+      exact: true,
       path: '/genres',
       component: GenresPage,
     },
+    {
+      exact: false,
+      path: '/game/detail/:id',
+      component: GameDetail,
+    },
+
 
   ]
 
