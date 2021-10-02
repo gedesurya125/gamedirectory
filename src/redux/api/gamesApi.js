@@ -18,6 +18,7 @@ export const getAllGamesApi = (page = 1) => getGamesApi({ page });
 //get all games by genres
 export const getGamesByGenreApi = (page = 1, genres) =>
   getGamesApi({ page, genres });
-//
 
-//get list of available gendre
+//Search games by search query
+export const searchGamesApi = (search) => getGamesApi({search, page: 1});
+

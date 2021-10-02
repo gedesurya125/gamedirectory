@@ -5,10 +5,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AllGamesPage from "./pages/allGames/AllGamesPage";
 import GenresPage from "./pages/byGenres/GenresPage";
 import GameDetail from "./pages/gameDetail/GameDetail";
+
 function App(props) {
-
-
-
+  // const appRef = useRef(null)
   const contentRouting = [
     {
       exact: true,

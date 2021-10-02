@@ -11,6 +11,7 @@ const PlatformImg = styled("img")(({ theme }) => ({
 
 const PlatformImgList = ({ parentPlatforms, sx }) => {
   const renderPlatformImg = (platforms) => {
+    if(!platforms) return <></>
     return platforms.map((platform) => (
       <PlatformImg key={platform.platform.id} src={selectPlatformImg(platform.platform.id)} />
     ));
