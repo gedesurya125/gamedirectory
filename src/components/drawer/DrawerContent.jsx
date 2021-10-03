@@ -12,6 +12,7 @@ import { Collapse } from "@mui/material";
 import * as appColor from "../../settings/appColor";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import GamesIcon from "@mui/icons-material/Games";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { getGenresAction } from "../../redux/actions/genresAction";
@@ -50,6 +51,13 @@ const DrawerContent = ({ handleDrawerToggle }) => {
           expandGenres: !state.expandGenres,
         })),
       subList: genreList.data.results || [],
+    },
+    {
+      name: "Favourite",
+      icon: FavoriteIcon,
+      route: "/favourite",
+      link: "/favourite",
+      subList: [],
     },
   ];
 

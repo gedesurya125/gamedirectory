@@ -44,7 +44,8 @@ const PageBanner = ({ games, sx }) => {
       }
       return (
         <BannerContainer sx={{
-          position: 'relative'
+          position: 'relative',
+          ...sx
         }}>
           {/* <Typography variant='h2' color={appColor.secondaryYellow} sx={{
             position: 'absolute',
@@ -79,7 +80,7 @@ const PageBanner = ({ games, sx }) => {
               textAlign: "center",
               maxWidth: "100%",
               maxHeight: "500px",
-              filter: 'grayscale(50%)'
+              // filter: 'grayscale(50%)'
               // margin: "40px auto",
             }}
           />

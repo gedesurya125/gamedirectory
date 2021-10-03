@@ -5,9 +5,9 @@ import * as appColor from '../../settings/appColor'
 
 const PaginationButton = ({ count = 20, action, currentPage }) => {
   const [page, setPage] = useState(1);
-  console.log(currentPage);
+  // console.log(currentPage);
   const handlePageChange = (event, value) => {
-    console.log(value);
+    // console.log(value);
     setPage(value);
     action(value);
   };
