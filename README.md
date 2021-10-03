@@ -3,8 +3,9 @@
 
 ### How To Install on Your Local Repository
 1. Clone this repository into your local repository
-2. Open this folder called by using ```cd gamedirectory/``` 
-2. Run in terminal ```npm start```
-3. Enjoy
+2. Open this folder by terminal ```cd gamedirectory/``` 
+3. Run in terminal ```npm install```
+4. Run in terminal ```npm start```
+5. Enjoy
 
 __Project by Surya__
