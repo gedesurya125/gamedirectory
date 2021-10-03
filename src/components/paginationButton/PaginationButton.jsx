@@ -111,7 +111,7 @@ const PaginationButton = ({ count = 20, action, currentPage }) => {
       >
         <MobilePaginationButton
           onClick={handleGoToPrevPage}
-          disabled={page === 1}
+          disabled={Number(currentPage) === 1 || page === 1}
           startIcon={<NavigateBeforeIcon />}
         >
           Prev
@@ -119,7 +119,7 @@ const PaginationButton = ({ count = 20, action, currentPage }) => {
         <span>{`${Number(currentPage) || page} / ${count}`}</span>
         <MobilePaginationButton
           onClick={handleGoToNextPage}
-          disabled={page === count}
+          disabled={Number(currentPage) === count ||page === count}
           endIcon={<NavigateNextIcon />}
         >
           Next
