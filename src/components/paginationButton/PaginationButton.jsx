@@ -25,12 +25,16 @@ const PaginationButton = ({ count = 20, action, currentPage }) => {
           "& .MuiPagination-ul": {
             justifyContent: "center",
             // padding: '0',
-            marginLeft:{
-              xs: '-15px',
-              sm: '0'
-            },
+            // marginLeft:{
+            //   xs: '-15px',
+            //   sm: '0'
+            // },
             "& .MuiButtonBase-root":{
               border: '1px solid yellow',
+              minWidth: {
+                xs: '20px',
+                md: '32px'
+              },
               "&.Mui-selected":{
                 backgroundColor: appColor.primaryYellow,
                 color: 'black'

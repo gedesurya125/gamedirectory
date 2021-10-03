@@ -6,6 +6,7 @@ import GamesCard from "./GamesCard";
 const Games = styled("div")(({ theme }) => ({
   display: "flex",
   flexWrap: "wrap",
+  width: '100%'
   // justifyContent: 'center'
 }));
 

@@ -7,7 +7,7 @@ import { Typography, Skeleton } from "@mui/material";
 
 const BannerContainer = styled('div')(
   ({theme}) => ({
-
+    width: '100%'
   }) 
 )
 
@@ -20,8 +20,13 @@ const PageBanner = ({ games, sx }) => {
       if (games.data.results?.length === 0)
         return <Typography>Data Not Found</Typography>;
       return (
-        <Skeleton variant="rectangular" width="100%" height="500px" sx={{
-          borderRadius: '10px'
+        <Skeleton variant="rectangular" width="100%" sx={{
+          borderRadius: '10px',
+          height: {
+            xs: '250px',
+            sm: '500px',
+            md: '500px'
+          }
         }}/>
       );
     } else {
@@ -44,7 +49,7 @@ const PageBanner = ({ games, sx }) => {
       }
       return (
         <BannerContainer sx={{
-          position: 'relative',
+          // position: 'relative',
           ...sx
         }}>
           {/* <Typography variant='h2' color={appColor.secondaryYellow} sx={{
@@ -80,6 +85,7 @@ const PageBanner = ({ games, sx }) => {
               textAlign: "center",
               maxWidth: "100%",
               maxHeight: "500px",
+
               // filter: 'grayscale(50%)'
               // margin: "40px auto",
             }}
