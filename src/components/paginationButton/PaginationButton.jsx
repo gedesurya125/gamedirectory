@@ -24,6 +24,11 @@ const PaginationButton = ({ count = 20, action, currentPage }) => {
         sx={{
           "& .MuiPagination-ul": {
             justifyContent: "center",
+            // padding: '0',
+            marginLeft:{
+              xs: '-15px',
+              sm: '0'
+            },
             "& .MuiButtonBase-root":{
               border: '1px solid yellow',
               "&.Mui-selected":{
