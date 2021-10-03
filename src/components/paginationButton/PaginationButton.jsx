@@ -50,11 +50,11 @@ const PaginationButton = ({ count = 20, action, currentPage }) => {
 
   useEffect(()=>{
     // console.log('its called', Number(currentPage) === 1)
-
-    if(Number(currentPage) === 1){
-      // console.log('its called 2')
-      setPage(1)
-    }
+    // console.log('PAGE', page)
+    // if(Number(currentPage) === 1){
+    //   console.log('its called 2')
+    //   setPage(1)
+    // }
   }, [currentPage])
   return (
     <>
@@ -89,9 +89,10 @@ const PaginationButton = ({ count = 20, action, currentPage }) => {
           }}
           count={count}
           variant="outlined"
-          page={page}
+          page={Number(currentPage) || page}
           onChange={handlePageChange}
           shape="rounded"
+          // defaultPage={Number(currentPage)}
         />
       </Stack>
 
