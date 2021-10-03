@@ -116,7 +116,7 @@ const PaginationButton = ({ count = 20, action, currentPage }) => {
         >
           Prev
         </MobilePaginationButton>
-        <span>{`${page} / ${count}`}</span>
+        <span>{`${Number(currentPage) || page} / ${count}`}</span>
         <MobilePaginationButton
           onClick={handleGoToNextPage}
           disabled={page === count}
