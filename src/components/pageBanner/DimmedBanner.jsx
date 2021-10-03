@@ -57,10 +57,12 @@ const DimmedBanner = ({ gameDetail, sx }) => {
               <Typography
                 sx={{
                   fontSize: {
-                    xs: '2.5em',
-                    sm: '3em'
+                    xs: '1.5em',
+                    sm: '2em',
+                    md: '3em'
                   },
                   fontWeight: "bold",
+                  // lineHeight: '1em'
 
                 }}
               >
