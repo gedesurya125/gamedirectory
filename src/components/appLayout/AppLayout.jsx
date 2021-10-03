@@ -42,7 +42,7 @@ function AppLayout(props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: "none" } }}
           >
-            <MenuIcon />
+            <MenuIcon sx={{color: 'black'}}/>
           </IconButton>
           <Logo sx={{
             display: {

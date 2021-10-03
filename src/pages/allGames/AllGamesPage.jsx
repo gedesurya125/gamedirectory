@@ -6,9 +6,13 @@ import useGetGames from "../../function/useGetGames";
 import PageTitle from "../../components/pageTitle/PageTitle";
 import PaginationButton from "../../components/paginationButton/PaginationButton";
 import { useHistory } from "react-router-dom";
+import { useQuery } from "../../function/useQuery";
 
 const AllGamesPage = () => {
   // const games = useSelector(state => state.games);
+  const query = useQuery();
+  const currentPage = query.get('page');
+  
   const history = useHistory();
   const games = useGetGames();
 
@@ -21,7 +25,7 @@ const AllGamesPage = () => {
       <PageBanner games={games}/>
       <PageTitle sx={{marginTop: '0.3em'}}>ALL GAMES</PageTitle>
       <GamesContainer games={games}/>
-      <PaginationButton count={Math.ceil(games.data.count/20)||20} action={handlePageChange}/>
+      <PaginationButton count={Math.ceil(games.data.count/20)||20} action={handlePageChange} currentPage={currentPage}/>
     </div>
   );
 };
